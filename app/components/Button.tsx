@@ -7,7 +7,7 @@ type ButtonProps = {
 export default function Button ({darkMode, onClick, children} : ButtonProps): React.ReactNode {
   const style = `
       px-6 py-3
-      w-fit
+      size-full
       rounded-2xl border border-white/20
       text-white font-bold
       
@@ -15,13 +15,13 @@ export default function Button ({darkMode, onClick, children} : ButtonProps): Re
       shadow-xl
       hover:cursor-pointer  transition-all duration-300
       active:scale-[0.98] hover:scale-[1.02]
-      relative overflow-hiddden
+      relative overflow-hidden
 
       ${darkMode ? 'bg-black/15 hover:bg-black/20' : 'bg-white/10 hover:bg-white/15'}
 `
 
   return(
-    <div className="mb-2">
+    <div>
      <button onClick={onClick} className={style}>
       <span className="absolute inset-0
           rounded-2xl

@@ -1,5 +1,5 @@
 import Button from "./Button"
-// import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
 
 type TextInputProps = {
   darkMode: boolean;
@@ -31,7 +31,7 @@ export default function TextInput ({darkMode, placeHolderText, value, onChange, 
 `
 
   return(
-    <div className="flex">
+    <div className="flex flex-row items-stretch">
       <div className="relative w-64 rounded-2xl mr-1">
         <div className="
           z-10
@@ -43,7 +43,7 @@ export default function TextInput ({darkMode, placeHolderText, value, onChange, 
         " />
           <input type="text" className={style} value={value} onChange={(e) => onChange(e.target.value)} onKeyDown={(e) => {if(e.key === "Enter") onSubmit(value)}} placeholder={placeHolderText ? placeHolderText : 'Enter text...'} />
       </div>
-      <Button darkMode={darkMode} onClick={() => onSubmit(value)}>Submit</Button>
+      <Button darkMode={darkMode} onClick={() => onSubmit(value)}><FaArrowRight size={20} /></Button>
     </div>
   )
 };
